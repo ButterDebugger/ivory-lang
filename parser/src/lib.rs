@@ -9,8 +9,8 @@ use crate::types::DataType;
 use crate::variables::parse_variable_declaration;
 use anyhow::{Result, anyhow};
 use funcs::parse_func_declaration;
-use gneurshk_lexer::TokenStream;
-use gneurshk_lexer::tokens::Token;
+use ivory_lexer::TokenStream;
+use ivory_lexer::tokens::Token;
 use std::ops::Range;
 
 mod assignments;

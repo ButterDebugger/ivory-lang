@@ -1,9 +1,9 @@
 use anyhow::{Result, anyhow};
 use console::style;
-use gneurshk_analyzer::program::{AnalyzedProgram, ProgramAnalyzer};
-use gneurshk_compiler::output::{executable::compile_to_executable, ir::create_llvm_ir_file};
-use gneurshk_lexer::{TokenStream, lex};
-use gneurshk_parser::{Program, parse};
+use ivory_analyzer::program::{AnalyzedProgram, ProgramAnalyzer};
+use ivory_compiler::output::{executable::compile_to_executable, ir::create_llvm_ir_file};
+use ivory_lexer::{TokenStream, lex};
+use ivory_parser::{Program, parse};
 use indicatif::ProgressBar;
 use std::path::PathBuf;
 

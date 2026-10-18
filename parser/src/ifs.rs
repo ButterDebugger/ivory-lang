@@ -1,7 +1,7 @@
 use super::{TokenStream, expressions::parse_expression};
 use crate::{ElseBranch, IfStatement, block::parse_block, consume_all_newlines};
 use anyhow::{Result, anyhow};
-use gneurshk_lexer::tokens::Token;
+use ivory_lexer::tokens::Token;
 
 pub fn parse_if_statement(tokens: &mut TokenStream) -> Result<IfStatement> {
     // Consume the If token
@@ -51,7 +51,7 @@ mod tests {
         BinaryExpression, BinaryOperator, Block, BooleanLit, ElseBranch, Expression,
         FunctionDeclaration, IfStatement, IntegerLit, Program, Stmt, VariableDeclaration, parse,
     };
-    use gneurshk_lexer::lex;
+    use ivory_lexer::lex;
 
     /// Helper function for testing the parse function
     fn lex_then_parse(input: &'static str) -> Program {

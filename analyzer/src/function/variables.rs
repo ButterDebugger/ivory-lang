@@ -1,5 +1,5 @@
 use crate::{errors::SematicError, function::FunctionAnalyzer, scope::Variable};
-use gneurshk_parser::{VariableDeclaration, types::DataType};
+use ivory_parser::{VariableDeclaration, types::DataType};
 
 impl<'a> FunctionAnalyzer<'a> {
     pub(crate) fn analyze_variable_declaration(

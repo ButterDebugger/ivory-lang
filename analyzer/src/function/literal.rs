@@ -1,5 +1,5 @@
 use crate::function::FunctionAnalyzer;
-use gneurshk_parser::types::DataType;
+use ivory_parser::types::DataType;
 
 impl<'a> FunctionAnalyzer<'a> {
     pub(crate) fn analyze_string(&mut self) -> Option<DataType> {

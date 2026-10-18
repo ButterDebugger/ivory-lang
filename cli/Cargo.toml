@@ -1,13 +1,13 @@
 [package]
-name = "gneurshk_cli"
+name = "ivory_cli"
 version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-gneurshk_compiler = { path = "../compiler" }
-gneurshk_analyzer = { path = "../analyzer" }
-gneurshk_parser = { path = "../parser" }
-gneurshk_lexer = { path = "../lexer" }
+ivory_compiler = { path = "../compiler" }
+ivory_analyzer = { path = "../analyzer" }
+ivory_parser = { path = "../parser" }
+ivory_lexer = { path = "../lexer" }
 
 anyhow.workspace = true
 indicatif.workspace = true

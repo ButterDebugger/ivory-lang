@@ -38,10 +38,10 @@ pub const CLAP_STYLING: Styles = Styles::styled()
     );
 
 fn main() {
-    let matches = Command::new("gneurshk")
+    let matches = Command::new("ivory")
         .about(format!(
             "{} is an awesome programming language",
-            style("Gneurshk").magenta().bright()
+            style("Ivory").magenta().bright()
         ))
         .version("0.1.0")
         .styles(CLAP_STYLING)

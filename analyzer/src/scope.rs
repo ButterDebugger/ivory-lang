@@ -1,4 +1,4 @@
-use gneurshk_parser::{FunctionParam, types::DataType};
+use ivory_parser::{FunctionParam, types::DataType};
 use std::collections::HashMap;
 
 #[derive(Clone, Debug)]

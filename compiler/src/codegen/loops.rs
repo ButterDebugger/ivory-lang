@@ -1,5 +1,5 @@
 use crate::codegen::{Codegen, LoopContext};
-use gneurshk_parser::LoopStmt;
+use ivory_parser::LoopStmt;
 use inkwell::values::BasicValueEnum;
 
 impl<'ctx> Codegen<'ctx> {

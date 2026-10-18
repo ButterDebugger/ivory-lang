@@ -3,7 +3,7 @@ use crate::{
     function::{AnalyzedFunction, FunctionAnalyzer},
     scope::{Function, Scope},
 };
-use gneurshk_parser::{FunctionDeclaration, Program};
+use ivory_parser::{FunctionDeclaration, Program};
 use std::collections::HashMap;
 
 #[derive(Debug)]

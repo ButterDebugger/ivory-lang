@@ -3,7 +3,7 @@ use crate::{
     block::parse_block, expressions::parse_expression,
 };
 use anyhow::{Result, anyhow};
-use gneurshk_lexer::{TokenStream, tokens::Token};
+use ivory_lexer::{TokenStream, tokens::Token};
 
 pub fn parse_loop(tokens: &mut TokenStream) -> Result<LoopStmt> {
     // Consume the Loop token
@@ -61,7 +61,7 @@ mod tests {
         Block, Expression, FunctionCall, FunctionDeclaration, LoopStmt, Program, Stmt, StringLit,
         parse,
     };
-    use gneurshk_lexer::lex;
+    use ivory_lexer::lex;
 
     /// Helper function for testing the parse function
     fn lex_then_parse(input: &'static str) -> Program {

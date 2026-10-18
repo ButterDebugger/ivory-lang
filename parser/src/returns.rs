@@ -1,6 +1,6 @@
 use crate::{Return, Stmt, expressions::parse_expression};
 use anyhow::{Result, anyhow};
-use gneurshk_lexer::{TokenStream, tokens::Token};
+use ivory_lexer::{TokenStream, tokens::Token};
 
 pub fn parse_return_statement(tokens: &mut TokenStream) -> Result<Stmt> {
     // Consume the Return token
@@ -26,7 +26,7 @@ mod tests {
         BinaryExpression, BinaryOperator, Block, Expression, FunctionDeclaration, IntegerLit,
         Program, Return, Stmt, parse,
     };
-    use gneurshk_lexer::lex;
+    use ivory_lexer::lex;
 
     /// Helper function for testing the parse function
     fn lex_then_parse(input: &'static str) -> Program {

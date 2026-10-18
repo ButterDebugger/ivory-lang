@@ -1,5 +1,5 @@
 use crate::function::{FunctionAnalyzer, LoopContext};
-use gneurshk_parser::{LoopStmt, types::DataType};
+use ivory_parser::{LoopStmt, types::DataType};
 
 // TODO: If the loop never ends,
 //   return an warning that any code after the loop is unreachable

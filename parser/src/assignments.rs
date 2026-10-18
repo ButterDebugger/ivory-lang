@@ -3,7 +3,7 @@ use crate::{
     identifiers::parse_member_expression_base,
 };
 use anyhow::{Result, anyhow};
-use gneurshk_lexer::{TokenStream, tokens::Token};
+use ivory_lexer::{TokenStream, tokens::Token};
 
 pub fn parse_assignment(tokens: &mut TokenStream) -> Result<Stmt> {
     // Read the variable
@@ -53,7 +53,7 @@ mod tests {
         Assignment, BinaryExpression, BinaryOperator, Block, Expression, FunctionDeclaration,
         Identifier, IntegerLit, MemberExpressionBase, Program, Stmt, parse,
     };
-    use gneurshk_lexer::lex;
+    use ivory_lexer::lex;
 
     /// Helper function for testing the parse function
     fn lex_then_parse(input: &'static str) -> Program {

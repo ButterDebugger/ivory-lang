@@ -3,7 +3,7 @@ use crate::{
     program::ProgramAnalyzer,
     scope::{Scope, Variable},
 };
-use gneurshk_parser::FunctionDeclaration;
+use ivory_parser::FunctionDeclaration;
 
 mod assignment;
 mod binary_expression;

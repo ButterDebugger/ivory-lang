@@ -3,7 +3,7 @@ use crate::{
     expressions::parse_expression,
 };
 use anyhow::{Result, anyhow};
-use gneurshk_lexer::{TokenStream, tokens::Token};
+use ivory_lexer::{TokenStream, tokens::Token};
 
 // TODO: handle indexing
 
@@ -158,7 +158,7 @@ mod tests {
         Identifier, IntegerLit, MemberAccess, MemberExpressionBase, MemberExpressionMember,
         Program, parse,
     };
-    use gneurshk_lexer::lex;
+    use ivory_lexer::lex;
 
     /// Helper function for testing the parse function
     fn lex_then_parse(input: &'static str) -> Program {

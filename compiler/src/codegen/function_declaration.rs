@@ -1,7 +1,7 @@
 use crate::codegen::Codegen;
 use crate::codegen::scope::{AllocationKind, Variable};
-use gneurshk_parser::types::DataType;
-use gneurshk_parser::{Block, FunctionParam};
+use ivory_parser::types::DataType;
+use ivory_parser::{Block, FunctionParam};
 use inkwell::values::{BasicValueEnum, FunctionValue};
 
 impl<'ctx> Codegen<'ctx> {

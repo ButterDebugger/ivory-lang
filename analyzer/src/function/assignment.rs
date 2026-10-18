@@ -1,5 +1,5 @@
 use crate::{errors::SematicError, function::FunctionAnalyzer};
-use gneurshk_parser::{Expression, MemberExpressionBase, types::DataType};
+use ivory_parser::{Expression, MemberExpressionBase, types::DataType};
 
 impl<'a> FunctionAnalyzer<'a> {
     pub(crate) fn analyze_assignment(

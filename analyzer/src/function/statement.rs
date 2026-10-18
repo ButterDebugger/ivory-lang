@@ -1,5 +1,5 @@
 use crate::function::FunctionAnalyzer;
-use gneurshk_parser::{
+use ivory_parser::{
     Assignment, BinaryExpression, FunctionCall, Identifier, Stmt, types::DataType,
 };
 

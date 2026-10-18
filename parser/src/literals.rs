@@ -1,6 +1,6 @@
 use crate::{BooleanLit, FloatLit, IntegerLit, StringLit};
 use anyhow::{Result, anyhow};
-use gneurshk_lexer::{TokenStream, tokens::Token};
+use ivory_lexer::{TokenStream, tokens::Token};
 
 pub fn parse_integer_literal(tokens: &mut TokenStream) -> Result<IntegerLit> {
     match tokens.next() {

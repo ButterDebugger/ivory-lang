@@ -1,6 +1,6 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "gneurshk",
+	"name": "ivory",
 	"patterns": [
 		{
 			"include": "#keywords"
@@ -31,11 +31,11 @@
 		"keywords": {
 			"patterns": [
 				{
-					"name": "keyword.control.gneurshk",
+					"name": "keyword.control.ivory",
 					"match": "\\b(if|while|for|loop|return|else|as|do|import|export|from|await|break|continue)\\b"
 				},
 				{
-					"name": "storage.type.gneurshk",
+					"name": "storage.type.ivory",
 					"match": "\\b(func|mut|var|const|struct|trait|impl|async|type|enum|static)\\b"
 				}
 			]
@@ -43,67 +43,67 @@
 		"operators": {
 			"patterns": [
 				{
-					"name": "keyword.operator.assignment.gneurshk",
+					"name": "keyword.operator.assignment.ivory",
 					"match": "([+\\-*\\/%]?=)"
 				},
 				{
-					"name": "keyword.operator.arithmetic.gneurshk",
+					"name": "keyword.operator.arithmetic.ivory",
 					"match": "(\\+|-|\\*|\/|%)"
 				},
 				{
-					"name": "keyword.operator.bitwise.gneurshk",
+					"name": "keyword.operator.bitwise.ivory",
 					"match": "(\\||&|\\^|<<|>>|~)"
 				},
 				{
-					"name": "keyword.operator.comparison.gneurshk",
+					"name": "keyword.operator.comparison.ivory",
 					"match": "([<>]=?|==|!=)"
 				},
 				{
-					"name": "keyword.operator.logical.gneurshk",
+					"name": "keyword.operator.logical.ivory",
 					"match": "(\\b(and|or|not)\\b|&&|\\|\\||!)"
 				}
 			]
 		},
 		"numbers": {
-			"name": "constant.numeric.gneurshk",
+			"name": "constant.numeric.ivory",
 			"match": "\\d+(\\.\\d+)?"
 		},
 		"boolean": {
-			"name": "constant.language.gneurshk",
+			"name": "constant.language.ivory",
 			"match": "\\b(true|false)\\b"
 		},
 		"comments": {
-			"name": "comment.line.number-sign.gneurshk",
+			"name": "comment.line.number-sign.ivory",
 			"begin": "#",
 			"end": "\n"
 		},
 		"functions": {
-			"name": "entity.name.function.gneurshk",
+			"name": "entity.name.function.ivory",
 			"match": "\\b[a-z_][a-zA-Z0-9_]*(?=\\()"
 		},
 		"variables": {
 			"patterns": [
 				{
-					"name": "entity.name.type.gneurshk",
+					"name": "entity.name.type.ivory",
 					"match": "\\b[A-Z_][a-zA-Z0-9_]*\\b"
 				},
 				{
-					"name": "variable.other.gneurshk",
+					"name": "variable.other.ivory",
 					"match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
 				}
 			]
 		},
 		"strings": {
-			"name": "string.quoted.double.gneurshk",
+			"name": "string.quoted.double.ivory",
 			"begin": "\"",
 			"end": "\"",
 			"patterns": [
 				{
-					"name": "constant.character.escape.gneurshk",
+					"name": "constant.character.escape.ivory",
 					"match": "\\\\."
 				}
 			]
 		}
 	},
-	"scopeName": "source.gneurshk"
+	"scopeName": "source.ivory"
 }

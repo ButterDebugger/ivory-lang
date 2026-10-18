@@ -1,14 +1,14 @@
 [package]
-name = "gneurshk_parser"
+name = "ivory_parser"
 version = "0.1.0"
 edition = "2024"
 
 [lib]
-name = "gneurshk_parser"
+name = "ivory_parser"
 path = "src/lib.rs"
 
 [dependencies]
-gneurshk_lexer = { path = "../lexer" }
+ivory_lexer = { path = "../lexer" }
 
 anyhow.workspace = true
 strum_macros = "0.28.0"

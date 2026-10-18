@@ -1,5 +1,5 @@
 use crate::function::FunctionAnalyzer;
-use gneurshk_parser::{BinaryExpression, Expression, FunctionCall, Identifier, types::DataType};
+use ivory_parser::{BinaryExpression, Expression, FunctionCall, Identifier, types::DataType};
 
 impl<'a> FunctionAnalyzer<'a> {
     pub(crate) fn analyze_expression(&mut self, expr: Expression) -> Option<DataType> {

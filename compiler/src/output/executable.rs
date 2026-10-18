@@ -1,6 +1,6 @@
 use crate::output::object::create_object_file;
 use anyhow::{Result, anyhow};
-use gneurshk_parser::Program;
+use ivory_parser::Program;
 use std::path::{Path, PathBuf};
 use std::process::Command;
 
@@ -55,7 +55,7 @@ mod tests {
 
         // Compile the source code to an executable
         let executable_path = compile_to_executable(
-            gneurshk_parser::parse(&mut gneurshk_lexer::lex(source).unwrap()).unwrap(),
+            ivory_parser::parse(&mut ivory_lexer::lex(source).unwrap()).unwrap(),
             output_path,
         )?;
 

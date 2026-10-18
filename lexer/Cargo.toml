@@ -1,10 +1,10 @@
 [package]
-name = "gneurshk_lexer"
+name = "ivory_lexer"
 version = "0.1.0"
 edition = "2024"
 
 [lib]
-name = "gneurshk_lexer"
+name = "ivory_lexer"
 path = "src/lib.rs"
 
 [dependencies]

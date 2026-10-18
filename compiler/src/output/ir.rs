@@ -1,6 +1,6 @@
 use crate::codegen::Codegen;
 use anyhow::{Result, anyhow};
-use gneurshk_parser::Program;
+use ivory_parser::Program;
 use inkwell::context::Context;
 use std::path::{Path, PathBuf};
 

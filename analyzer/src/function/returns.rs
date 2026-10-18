@@ -1,5 +1,5 @@
 use crate::{errors::SematicError, function::FunctionAnalyzer};
-use gneurshk_parser::{Return, types::DataType};
+use ivory_parser::{Return, types::DataType};
 
 impl<'a> FunctionAnalyzer<'a> {
     pub(crate) fn analyze_return(&mut self, return_stmt: Return) -> Option<DataType> {

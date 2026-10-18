@@ -1,5 +1,5 @@
 use crate::{errors::SematicWarning, function::FunctionAnalyzer};
-use gneurshk_parser::{Block, types::DataType};
+use ivory_parser::{Block, types::DataType};
 
 impl<'a> FunctionAnalyzer<'a> {
     pub(crate) fn analyze_block(&mut self, block: Block) -> Option<DataType> {

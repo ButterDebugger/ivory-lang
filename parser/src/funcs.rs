@@ -4,7 +4,7 @@ use crate::{
     types::parse_type,
 };
 use anyhow::{Result, anyhow};
-use gneurshk_lexer::tokens::Token;
+use ivory_lexer::tokens::Token;
 
 pub fn parse_func_declaration(tokens: &mut TokenStream) -> Result<FunctionDeclaration> {
     // Read annotations
@@ -205,7 +205,7 @@ mod tests {
         FunctionDeclaration, FunctionParam, Identifier, IntegerLit, Program, Stmt,
         VariableDeclaration, parse,
     };
-    use gneurshk_lexer::lex;
+    use ivory_lexer::lex;
 
     /// Helper function for testing the parse function
     fn lex_then_parse(input: &'static str) -> Program {

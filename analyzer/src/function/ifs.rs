@@ -1,5 +1,5 @@
 use crate::{errors::SematicError, function::FunctionAnalyzer};
-use gneurshk_parser::{ElseBranch, IfStatement, types::DataType};
+use ivory_parser::{ElseBranch, IfStatement, types::DataType};
 
 impl<'a> FunctionAnalyzer<'a> {
     pub(crate) fn analyze_if(&mut self, if_stmt: IfStatement) -> Option<DataType> {

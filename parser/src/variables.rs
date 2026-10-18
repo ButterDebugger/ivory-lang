@@ -1,7 +1,7 @@
 use super::{Stmt, TokenStream, expressions::parse_expression};
 use crate::{VariableDeclaration, types::parse_type};
 use anyhow::{Result, anyhow};
-use gneurshk_lexer::tokens::Token;
+use ivory_lexer::tokens::Token;
 
 pub fn parse_variable_declaration(tokens: &mut TokenStream) -> Result<Stmt> {
     let mutable = match tokens.next() {
@@ -76,7 +76,7 @@ mod tests {
         BinaryExpression, BinaryOperator, Block, Expression, FunctionDeclaration, IntegerLit,
         Program, Stmt, VariableDeclaration, parse, types::DataType,
     };
-    use gneurshk_lexer::lex;
+    use ivory_lexer::lex;
 
     /// Helper function for testing the parse function
     fn lex_then_parse(input: &'static str) -> Program {

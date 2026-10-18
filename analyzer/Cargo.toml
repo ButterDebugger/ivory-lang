@@ -1,14 +1,14 @@
 [package]
-name = "gneurshk_analyzer"
+name = "ivory_analyzer"
 version = "0.1.0"
 edition = "2024"
 
 [lib]
-name = "gneurshk_analyzer"
+name = "ivory_analyzer"
 path = "src/lib.rs"
 
 [dependencies]
-gneurshk_parser = { path = "../parser" }
+ivory_parser = { path = "../parser" }
 
 anyhow.workspace = true
 thiserror = "2.0.16"

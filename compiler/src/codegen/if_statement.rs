@@ -1,5 +1,5 @@
 use crate::codegen::Codegen;
-use gneurshk_parser::{Block, ElseBranch, Expression, IfStatement};
+use ivory_parser::{Block, ElseBranch, Expression, IfStatement};
 use inkwell::{IntPredicate, values::BasicValueEnum};
 
 impl<'ctx> Codegen<'ctx> {

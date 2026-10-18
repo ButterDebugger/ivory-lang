@@ -1,21 +1,21 @@
 {
-	"name": "gneurshk",
-	"displayName": "Gneurshk",
-	"version": "0.1.5",
+	"name": "ivory",
+	"displayName": "Ivory",
+	"version": "0.1.6",
 	"description": "An awesome language",
 	"categories": [
 		"Programming Languages"
 	],
 	"keywords": [
-		"Gneurshk"
+		"Ivory"
 	],
 	"bugs": {
-		"url": "https://github.com/ButterDebugger/gneurshk-lang/issues"
+		"url": "https://github.com/ButterDebugger/ivory-lang/issues"
 	},
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/ButterDebugger/gneurshk-lang.git"
+		"url": "git+https://github.com/ButterDebugger/ivory-lang.git"
 	},
 	"publisher": "ButterDebugger",
 	"main": "./out/extension.js",
@@ -26,9 +26,9 @@
 	"contributes": {
 		"languages": [
 			{
-				"id": "gneurshk",
+				"id": "ivory",
 				"aliases": [
-					"gneurshk"
+					"ivory"
 				],
 				"extensions": [
 					".iv"
@@ -38,9 +38,9 @@
 		],
 		"grammars": [
 			{
-				"language": "gneurshk",
-				"scopeName": "source.gneurshk",
-				"path": "./syntaxes/gneurshk.tmLanguage.json"
+				"language": "ivory",
+				"scopeName": "source.ivory",
+				"path": "./syntaxes/ivory.tmLanguage.json"
 			}
 		]
 	},
@@ -52,5 +52,8 @@
 		"@types/vscode": "^1.109.0",
 		"@vscode/vsce": "^4.0.0",
 		"typescript": "^5.9.3"
+	},
+	"allowScripts": {
+		"@vscode/vsce-sign@2.1.0": true
 	}
 }

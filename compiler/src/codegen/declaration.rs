@@ -1,5 +1,5 @@
 use crate::codegen::{Codegen, scope::{AllocationKind, Variable}};
-use gneurshk_parser::VariableDeclaration;
+use ivory_parser::VariableDeclaration;
 use inkwell::values::BasicValueEnum;
 
 impl<'ctx> Codegen<'ctx> {

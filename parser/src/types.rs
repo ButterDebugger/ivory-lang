@@ -1,5 +1,5 @@
 use anyhow::{Result, anyhow};
-use gneurshk_lexer::{TokenStream, tokens::Token};
+use ivory_lexer::{TokenStream, tokens::Token};
 use std::str::FromStr;
 use strum_macros::EnumString;
 

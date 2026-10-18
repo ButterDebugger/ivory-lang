@@ -1,6 +1,6 @@
 use crate::{Block, TokenStream, consume_all_newlines, parse_statement};
 use anyhow::{Result, anyhow};
-use gneurshk_lexer::tokens::Token;
+use ivory_lexer::tokens::Token;
 
 // TODO: Make this return statement consistent with the rest of the parser
 pub fn parse_block(tokens: &mut TokenStream) -> Result<Block> {
@@ -60,7 +60,7 @@ pub fn parse_block(tokens: &mut TokenStream) -> Result<Block> {
 #[cfg(test)]
 mod tests {
     use crate::{Block, FunctionDeclaration, IntegerLit, Program, Stmt, parse};
-    use gneurshk_lexer::lex;
+    use ivory_lexer::lex;
 
     /// Helper function for testing the parse function
     fn lex_then_parse(input: &'static str) -> Program {

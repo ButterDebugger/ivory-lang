@@ -1,5 +1,5 @@
 use crate::{errors::SematicError, function::FunctionAnalyzer};
-use gneurshk_parser::types::DataType;
+use ivory_parser::types::DataType;
 
 impl<'a> FunctionAnalyzer<'a> {
     pub(crate) fn analyze_identifier(&mut self, name: String) -> Option<DataType> {

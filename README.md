@@ -1,9 +1,9 @@
-# Gneurshk
+# Ivory
 
 A easy to use and blazingly fast programming language written in Rust using LLVM as a backend
 
 > [!NOTE]
-> This project is still in its early stages so things are subject to change _including the name_
+> This project is still in its early stages so things are subject to change
 
 ## Contributing
 
@@ -32,7 +32,7 @@ If you would like to contribute to the project, please follow the steps below to
 ### Installation
 
 1. Clone the Repo:<br>
-   `git clone https://github.com/ButterDebugger/gneurshk-lang.git`
+   `git clone https://github.com/ButterDebugger/ivory-lang.git`
 
 2. Build the project:<br>
    `cargo build`
@@ -42,4 +42,4 @@ If you would like to contribute to the project, please follow the steps below to
 
 ## License
 
-Gneurshk is licensed under [`MIT License`](LICENSE).
+Ivory is licensed under [`MIT License`](LICENSE).

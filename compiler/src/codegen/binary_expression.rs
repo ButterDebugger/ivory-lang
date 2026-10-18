@@ -1,5 +1,5 @@
 use crate::codegen::Codegen;
-use gneurshk_parser::{BinaryOperator, Expression};
+use ivory_parser::{BinaryOperator, Expression};
 use inkwell::IntPredicate;
 use inkwell::values::{BasicValueEnum, IntValue};
 

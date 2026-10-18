@@ -1,7 +1,7 @@
 use super::TokenStream;
 use crate::{ImportCollection, ImportStmt, ImportedSymbol, literals::parse_string_literal};
 use anyhow::{Result, anyhow};
-use gneurshk_lexer::tokens::Token;
+use ivory_lexer::tokens::Token;
 
 pub fn parse_import(tokens: &mut TokenStream) -> Result<ImportStmt> {
     // Consume the Import token
@@ -101,7 +101,7 @@ fn parse_import_symbols(tokens: &mut TokenStream) -> Result<Vec<ImportedSymbol>>
 #[cfg(test)]
 mod tests {
     use crate::{ImportCollection, ImportStmt, ImportedSymbol, Program, StringLit, parse};
-    use gneurshk_lexer::lex;
+    use ivory_lexer::lex;
 
     /// Helper function for testing the parse function
     fn lex_then_parse(input: &'static str) -> Program {

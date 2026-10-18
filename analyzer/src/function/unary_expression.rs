@@ -1,5 +1,5 @@
 use crate::{errors::SematicError, function::FunctionAnalyzer};
-use gneurshk_parser::{UnaryExpression, UnaryOperator, types::DataType};
+use ivory_parser::{UnaryExpression, UnaryOperator, types::DataType};
 
 impl<'a> FunctionAnalyzer<'a> {
     pub(crate) fn analyze_unary_expression(&mut self, expr: UnaryExpression) -> Option<DataType> {

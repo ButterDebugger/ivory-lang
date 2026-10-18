@@ -1,5 +1,5 @@
 use crate::{errors::SematicError, function::FunctionAnalyzer};
-use gneurshk_parser::{BinaryOperator, Expression, types::DataType};
+use ivory_parser::{BinaryOperator, Expression, types::DataType};
 
 impl<'a> FunctionAnalyzer<'a> {
     pub(crate) fn analyze_binary_expression(
@@ -42,7 +42,9 @@ impl<'a> FunctionAnalyzer<'a> {
             _ => {
                 self.program_analyzer
                     .errors
-                    .push(SematicError::UnsupportedOperator(left_type, operator, right_type));
+                    .push(SematicError::UnsupportedOperator(
+                        left_type, operator, right_type,
+                    ));
 
                 None
             }

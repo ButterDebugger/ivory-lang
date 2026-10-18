@@ -1,4 +1,4 @@
-use gneurshk_parser::{BinaryOperator, types::DataType};
+use ivory_parser::{BinaryOperator, types::DataType};
 use thiserror::Error;
 
 #[derive(Error, Debug, Clone, PartialEq, Eq, Hash)]

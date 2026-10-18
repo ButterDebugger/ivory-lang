@@ -1,6 +1,6 @@
 use crate::codegen::scope::Scope;
 use anyhow::{Result, anyhow};
-use gneurshk_parser::{
+use ivory_parser::{
     Assignment, BinaryExpression, BooleanLit, Expression, FloatLit, FunctionDeclaration,
     IfStatement, IntegerLit, Program, Return, Stmt, StringLit, UnaryExpression,
 };

@@ -1,5 +1,5 @@
 use crate::codegen::Codegen;
-use gneurshk_parser::Expression;
+use ivory_parser::Expression;
 use inkwell::values::BasicValueEnum;
 
 impl<'ctx> Codegen<'ctx> {

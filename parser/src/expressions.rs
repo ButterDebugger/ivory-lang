@@ -10,7 +10,7 @@ use crate::{
     types::parse_type,
 };
 use anyhow::{Result, anyhow};
-use gneurshk_lexer::tokens::Token;
+use ivory_lexer::tokens::Token;
 
 /// Parses a binary expression based on operator priority
 pub fn parse_expression(tokens: &mut TokenStream) -> Result<Expression> {
@@ -216,7 +216,7 @@ mod tests {
         Identifier, IntegerLit, MemberAccess, MemberExpressionBase, MemberExpressionMember,
         Program, Stmt, StringLit, UnaryOperator, VariableDeclaration, parse,
     };
-    use gneurshk_lexer::lex;
+    use ivory_lexer::lex;
 
     /// Helper function for testing the parse function
     fn lex_then_parse(input: &'static str) -> Program {
