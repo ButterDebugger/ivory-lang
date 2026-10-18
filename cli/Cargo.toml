@@ -3,6 +3,10 @@ name = "ivory_cli"
 version = "0.1.0"
 edition = "2024"
 
+[[bin]]
+name = "ivory"
+path = "src/main.rs"
+
 [dependencies]
 ivory_compiler = { path = "../compiler" }
 ivory_analyzer = { path = "../analyzer" }
