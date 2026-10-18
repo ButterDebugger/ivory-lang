@@ -1,15 +1,15 @@
 use crate::codegen::scope::Scope;
 use anyhow::{Result, anyhow};
-use ivory_parser::{
-    Assignment, BinaryExpression, BooleanLit, Expression, FloatLit, FunctionDeclaration,
-    IfStatement, IntegerLit, Program, Return, Stmt, StringLit, UnaryExpression,
-};
 use inkwell::AddressSpace;
 use inkwell::basic_block::BasicBlock;
 use inkwell::builder::Builder;
 use inkwell::context::Context;
 use inkwell::module::Module;
 use inkwell::values::BasicValueEnum;
+use ivory_parser::{
+    Assignment, BinaryExpression, BooleanLit, Expression, FloatLit, FunctionDeclaration,
+    IfStatement, IntegerLit, Program, Return, Stmt, StringLit, UnaryExpression,
+};
 use std::collections::HashMap;
 
 mod assignment;
@@ -135,6 +135,7 @@ impl<'ctx> Codegen<'ctx> {
             Stmt::Break => self.build_break_statement(),
             Stmt::Continue => self.build_continue_statement(),
             Stmt::Cast(_) => todo!(),
+            Stmt::While(_) => todo!(),
         }
     }
 

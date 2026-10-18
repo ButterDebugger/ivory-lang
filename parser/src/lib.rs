@@ -201,6 +201,12 @@ pub struct LoopStmt {
 }
 
 #[derive(Debug, PartialEq, Clone)]
+pub struct WhileStmt {
+    pub condition: Box<Expression>,
+    pub block: Box<Block>,
+}
+
+#[derive(Debug, PartialEq, Clone)]
 pub struct IntegerLit {
     pub value: u64,
     pub span: Range<usize>,
@@ -308,6 +314,7 @@ pub enum Stmt {
     String(StringLit),
     Return(Return),
     Loop(LoopStmt),
+    While(WhileStmt),
     Continue,
     Break,
 }
@@ -401,7 +408,7 @@ fn parse_statement(tokens: &mut TokenStream) -> Result<Stmt> {
         Token::OpenBrace => Ok(Stmt::Block(parse_block(tokens)?)),
         Token::Return => parse_return_statement(tokens),
         Token::Loop => Ok(Stmt::Loop(parse_loop(tokens)?)),
-        Token::While => Ok(Stmt::Loop(parse_while_loop(tokens)?)),
+        Token::While => Ok(Stmt::While(parse_while_loop(tokens)?)),
         Token::Break => {
             tokens.next(); // Consume the break token
 

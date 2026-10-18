@@ -1,7 +1,4 @@
-use crate::{
-    Block, Expression, IfStatement, LoopStmt, Stmt, UnaryExpression, UnaryOperator,
-    block::parse_block, expressions::parse_expression,
-};
+use crate::{LoopStmt, WhileStmt, block::parse_block, expressions::parse_expression};
 use anyhow::{Result, anyhow};
 use ivory_lexer::{TokenStream, tokens::Token};
 
@@ -18,7 +15,7 @@ pub fn parse_loop(tokens: &mut TokenStream) -> Result<LoopStmt> {
     })
 }
 
-pub fn parse_while_loop(tokens: &mut TokenStream) -> Result<LoopStmt> {
+pub fn parse_while_loop(tokens: &mut TokenStream) -> Result<WhileStmt> {
     // Consume the While token
     match tokens.next() {
         Some((Token::While, _)) => {}
@@ -31,35 +28,17 @@ pub fn parse_while_loop(tokens: &mut TokenStream) -> Result<LoopStmt> {
     // Parse the loop body block
     let loop_body = parse_block(tokens)?;
 
-    // Create while loop guard
-    let guard = Stmt::IfStatement(IfStatement {
-        condition: Box::new(Expression::UnaryExpression(UnaryExpression {
-            value: Box::new(condition),
-            operator: UnaryOperator::Not,
-        })),
-        if_block: Box::new(Block {
-            body: vec![Stmt::Break],
-            allow_implicit_return: true,
-        }),
-        else_statement: None,
-    });
-
-    let mut guarded_body = vec![guard];
-    guarded_body.extend(loop_body.body);
-
-    Ok(LoopStmt {
-        block: Box::new(Block {
-            body: guarded_body,
-            allow_implicit_return: loop_body.allow_implicit_return,
-        }),
+    Ok(WhileStmt {
+        condition: Box::new(condition),
+        block: Box::new(loop_body),
     })
 }
 
 #[cfg(test)]
 mod tests {
     use crate::{
-        Block, Expression, FunctionCall, FunctionDeclaration, LoopStmt, Program, Stmt, StringLit,
-        parse,
+        Block, BooleanLit, Expression, FunctionCall, FunctionDeclaration, LoopStmt, Program, Stmt,
+        StringLit, WhileStmt, parse,
     };
     use ivory_lexer::lex;
 
@@ -127,6 +106,45 @@ mod tests {
                             block: Box::new(Block {
                                 body: vec![Stmt::Break, Stmt::Continue],
                                 allow_implicit_return: true,
+                            }),
+                        })],
+                        allow_implicit_return: true
+                    })
+                }]
+            }
+        );
+    }
+
+    #[test]
+    fn while_loop() {
+        let source = include_str!("../tests/loops/while_loop.iv");
+        let program = lex_then_parse(source);
+
+        assert_eq!(
+            program,
+            Program {
+                imports: vec![],
+                functions: vec![FunctionDeclaration {
+                    name: "main".to_string(),
+                    params: vec![],
+                    return_type: None,
+                    annotations: vec![],
+                    block: Box::new(Block {
+                        body: vec![Stmt::While(WhileStmt {
+                            condition: Box::new(Expression::Boolean(BooleanLit {
+                                value: true,
+                                span: 25..29
+                            })),
+                            block: Box::new(Block {
+                                body: vec![Stmt::FunctionCall(FunctionCall {
+                                    name: "println".to_string(),
+                                    args: vec![Expression::String(StringLit {
+                                        value: "Hello, world!".to_string(),
+                                        span: 49..64
+                                    })],
+                                    span: 41..65
+                                })],
+                                allow_implicit_return: false
                             }),
                         })],
                         allow_implicit_return: true
