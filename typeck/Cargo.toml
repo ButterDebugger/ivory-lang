@@ -1,0 +1,14 @@
+[package]
+name = "ivory_typeck"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+name = "ivory_typeck"
+path = "src/lib.rs"
+
+[dependencies]
+ivory_parser = { path = "../parser" }
+
+anyhow.workspace = true
+thiserror = "2.0.16"

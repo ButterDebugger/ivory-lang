@@ -331,6 +331,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "ivory_typeck"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "ivory_parser",
+ "thiserror",
+]
+
+[[package]]
 name = "js-sys"
 version = "0.3.106"
 source = "registry+https://github.com/rust-lang/crates.io-index"
