@@ -222,7 +222,6 @@ fn main() {
                 }
             };
         }
-
         Some(("lex", query_matches)) => {
             // Get the path from the arguments
             let path = query_matches
@@ -359,6 +358,7 @@ fn main() {
 
 fn create_progress_bar() -> Box<ProgressBar> {
     let pb = ProgressBar::new_spinner();
+
     pb.enable_steady_tick(Duration::from_millis(80));
     pb.set_style(
         ProgressStyle::with_template("{spinner:.blue} {msg}")
