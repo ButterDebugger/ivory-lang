@@ -1,7 +1,9 @@
+use crate::{
+    analyzer::{Analyzer, FuncId, VarId},
+    tir::{Function, Variable},
+};
 use ivory_parser::{FunctionParam, types::DataType};
 use std::collections::HashMap;
-
-use crate::analyzer::{Analyzer, FuncId, VarId};
 
 #[derive(Clone, Debug, Default)]
 pub struct Scope {
@@ -21,16 +23,7 @@ impl Analyzer {
     }
 }
 
-// Variables
-
-#[derive(Clone, Debug)]
-pub struct Variable {
-    pub(crate) name: String,
-    pub(crate) data_type: DataType,
-    pub(crate) mutable: bool,
-    pub(crate) used: bool,
-    pub(crate) initialized: bool,
-}
+// Variable methods
 
 impl Analyzer {
     pub(crate) fn define_variable(&mut self, name: String, variable: Variable) -> VarId {
@@ -53,20 +46,21 @@ impl Analyzer {
     }
 }
 
-// Functions
+// Function methods
 
 #[derive(Clone, Debug)]
-pub struct Function {
-    pub(crate) return_type: Option<DataType>,
+pub(crate) struct FunctionSignature {
+    pub(crate) name: String,
     pub(crate) params: Vec<FunctionParam>,
+    pub(crate) return_type: Option<DataType>,
 }
 
 impl Analyzer {
-    pub(crate) fn define_function(&mut self, name: String, function: Function) -> FuncId {
+    pub(crate) fn define_function(&mut self, name: String, signature: FunctionSignature) -> FuncId {
         // Add function to global symbols list
         let id = FuncId(self.functions.len());
 
-        self.functions.push(function);
+        self.functions.push(signature);
 
         // Save the function in the local scope
         self.scopes.last_mut().unwrap().functions.insert(name, id);
